@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane fx:id="viewDinner" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #faf0e6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cookbook.WeeklyDinnerController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="1200.0">
+         <top>
+            <Pane prefHeight="109.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="602.0" fitWidth="561.0" layoutX="-174.0" layoutY="-264.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/beige2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="4.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/beef.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="171.0" layoutY="-63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/salmon.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="467.0" layoutY="36.0" prefHeight="38.0" prefWidth="256.0" text="Weekly Dinner">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <HBox prefHeight="147.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="147.0" prefWidth="1201.0">
+                     <children>
+                        <Button fx:id="backHome" layoutX="465.0" layoutY="34.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="36.0" prefWidth="106.0" style="-fx-background-color: #F66A6B; -fx-text-fill: FFFFFF;" stylesheets="@style.css" text="Home">
+                           <styleClass>
+                              <String fx:value="side_menupane" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="shoppingList" layoutX="605.0" layoutY="33.0" mnemonicParsing="false" onAction="#viewShoppingList" prefHeight="36.0" prefWidth="106.0" style="-fx-background-color: #F66A6B; -fx-text-fill: FFFFFF;" stylesheets="@style.css" text="Shopping List">
+                           <styleClass>
+                              <String fx:value="side_menupane" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                        <ImageView fitHeight="602.0" fitWidth="611.0" layoutX="809.0" layoutY="-226.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/beige3.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1031.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/shrimp.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="871.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/chicken.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <Pane prefHeight="358.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="table" layoutX="287.0" layoutY="121.0" prefHeight="230.0" prefWidth="593.0" stylesheets="@style.css">
+                    <columns>
+                      <TableColumn fx:id="dayColumn" prefWidth="75.0" text="Day" />
+                      <TableColumn fx:id="recipeColumn" prefWidth="200.0" text="Recipe" />
+                    </columns>
+                  </TableView>
+                  <ChoiceBox fx:id="choiceBox" layoutX="515.0" layoutY="37.0" onAction="#handleChoiceBoxSelection" prefHeight="26.0" prefWidth="150.0" styleClass="side_menupane" stylesheets="@style.css" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-56.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/spaghetti.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1102.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/soup.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="526.0" layoutY="-5.0" prefHeight="38.0" prefWidth="123.0" text="Week selection">
+                     <font>
+                        <Font name="Lahore Gurmukhi Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</FlowPane>

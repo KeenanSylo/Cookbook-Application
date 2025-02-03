@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="600" prefWidth="1200" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cookbook.HomeController">
+
+    <!-- Left section -->
+    <left>
+        <VBox alignment="CENTER" maxWidth="200.0" prefHeight="507.0" prefWidth="228.0" spacing="10" style="-fx-padding: 10; -fx-border-width: 1; -fx-background-color: #FFFFFF;" stylesheets="@style.css">
+            <Pane prefHeight="542.0" prefWidth="180.0" style="-fx-background-color: #faf0e6;" styleClass="side_menupane" stylesheets="@style.css">
+                <children>
+                    <StackPane layoutX="18.0" layoutY="48.0">
+                        <ImageView fx:id="userProfileImage" fitHeight="100" fitWidth="100">
+                            <clip>
+                                <Circle radius="50" />
+                            </clip>
+                        </ImageView>
+                        <Text text="Profile Picture">
+                            <font>
+                                <Font name="Lava Devanagari Heavy" size="13.0" />
+                            </font>
+                        </Text>
+                        <Circle fill="#ffffff00" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
+                    </StackPane>
+                    <Button layoutX="7.0" layoutY="231.0" onAction="#inbox" prefHeight="29.0" prefWidth="166.0" style="-fx-border-radius: 50; -fx-text-fill: #ffffff; -fx-background-color: #F66A6B;" stylesheets="@style.css" text="Inbox">
+                        <font>
+                            <Font name="Lava Devanagari Heavy" size="12.0" />
+                        </font>
+                        <styleClass>
+                            <String fx:value="side_ankerpane" />
+                            <String fx:value="shadow" />
+                        </styleClass>
+                    </Button>
+                    <Button fx:id="viewFavoritesButton" layoutX="7.0" layoutY="269.0" onAction="#loadFavorites" prefHeight="29.0" prefWidth="166.0" style="-fx-text-fill: #ffffff; -fx-background-color: #F66A6B;" stylesheets="@style.css" text="View Favorites">
+                        <font>
+                            <Font name="Lava Devanagari Heavy" size="12.0" />
+                        </font>
+                        <styleClass>
+                            <String fx:value="side_ankerpane" />
+                            <String fx:value="shadow" />
+                        </styleClass>
+                    </Button>
+                    <Button layoutX="7.0" layoutY="308.0" maxHeight="29.0" minHeight="20.0" onAction="#viewDinnerList" prefHeight="29.0" prefWidth="166.0" style="-fx-background-color: #F66A6B; -fx-text-fill: #ffffff;" stylesheets="@style.css" text="View Weekly Dinner Lists">
+                        <font>
+                            <Font name="Lava Devanagari Heavy" size="11.0" />
+                        </font>
+                        <styleClass>
+                            <String fx:value="side_ankerpane" />
+                            <String fx:value="shadow" />
+                        </styleClass>
+                    </Button>
+                    <Button layoutX="7.0" layoutY="347.0" maxHeight="29.0" minHeight="20.0" onAction="#addRecipe" prefHeight="29.0" prefWidth="166.0" style="-fx-background-color: #F66A6B; -fx-text-fill: #ffffff;" stylesheets="@style.css" text="Add Recipe">
+                        <font>
+                            <Font name="Lava Devanagari Heavy" size="12.0" />
+                        </font>
+                        <styleClass>
+                            <String fx:value="side_ankerpane" />
+                            <String fx:value="shadow" />
+                        </styleClass>
+                    </Button>
+                    <ImageView fitHeight="172.0" fitWidth="217.0" layoutX="-69.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@image/graph.png" />
+                        </image>
+                    </ImageView>
+                    <ImageView fitHeight="161.0" fitWidth="169.0" layoutX="89.0" layoutY="-77.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@image/graph%20orange.png" />
+                        </image>
+                    </ImageView>
+               <Button layoutX="7.0" layoutY="387.0" maxHeight="29.0" minHeight="20.0" onAction="#logout" prefHeight="29.0" prefWidth="166.0" style="-fx-background-color: #F66A6B; -fx-text-fill: #ffffff;" stylesheets="@style.css" text="Logout">
+                  <font>
+                     <Font name="Lava Devanagari Heavy" size="12.0" />
+                  </font>
+                  <styleClass>
+                     <String fx:value="side_ankerpane" />
+                     <String fx:value="shadow" />
+                  </styleClass>
+               </Button>
+                </children>
+            </Pane>
+        </VBox>
+    </left>
+
+    <!-- Center section -->
+    <center>
+        <StackPane fx:id="centerStackPane">
+            <!-- Main content -->
+            <VBox prefHeight="532" prefWidth="994" spacing="10" style="-fx-padding: 10; -fx-background-color: #FFFFFF;">
+                <HBox spacing="10">
+                    <TextField fx:id="searchNameField" prefHeight="26" prefWidth="290" promptText="Search by Name">
+                        <font>
+                            <Font name="Helvetica" size="13" />
+                        </font>
+                    </TextField>
+                    <TextField fx:id="searchIngredientsField" prefWidth="300" promptText="Search by Ingredients">
+                        <font>
+                            <Font name="Helvetica" size="13" />
+                        </font>
+                    </TextField>
+                    <TextField fx:id="searchTagsField" prefWidth="300" promptText="Search by Tags">
+                        <font>
+                            <Font name="Helvetica" size="13" />
+                        </font>
+                    </TextField>
+                    <Button onAction="#searchRecipes" style="-fx-background-color: #F66A6B; -fx-text-fill: white;" styleClass="shadow" stylesheets="@style.css" text="Search">
+                        <font>
+                            <Font name="Lava Devanagari Heavy" size="12" />
+                        </font>
+                    </Button>
+                </HBox>
+
+                <!-- FlowPane for recipe boxes -->
+                <FlowPane fx:id="recipePane" hgap="20" style="-fx-padding: 10;" vgap="20" />
+            </VBox>
+
+            <!-- Overlay for detailed recipe information -->
+            <VBox fx:id="recipeDetailsOverlay" spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 10; -fx-border-color: #cccccc; -fx-border-width: 2;" visible="false">
+                <VBox alignment="CENTER">
+                    <Label fx:id="recipeName" style="-fx-font-weight: bold; -fx-font-size: 20;" text="Recipe Name" />
+                   <Label fx:id="recipeShortDescription" style="-fx-font-style: italic;" text="Short Description" />
+                </VBox>
+                <Text fx:id="recipeDetailedDescription" text="Detailed Description" wrappingWidth="600" />
+                
+                <!-- Portion size control -->
+                <HBox spacing="10">
+                    <Label text="Portion Size:" />
+                    <Text fx:id="recipePortions" />
+                    <TextField fx:id="portionInput" promptText="Enter new portion size" />
+                    <Button onAction="#recalculateIngredients" style="-fx-background-color: #F66A6B; -fx-text-fill: white;" styleClass="shadow" stylesheets="@style.css" text="Recalculate">
+                  <font>
+                     <Font name="Lava Devanagari Medium" size="13.0" />
+                  </font></Button>
+                </HBox>
+
+                <!-- Ingredients list -->
+                <VBox fx:id="recipeIngredients" spacing="5">
+                    <Label style="-fx-font-weight: bold;" text="Ingredients:" />
+                </VBox>
+
+                <!-- Comments section -->
+                <VBox spacing="10">
+                    <Label style="-fx-font-weight: bold;" text="Comments:" />
+                    <ScrollPane prefHeight="168.0" prefWidth="233.0">
+                        <content>
+                            <VBox fx:id="commentList" spacing="5" />
+                        </content>
+                    </ScrollPane>
+                    <TextArea fx:id="commentInput" promptText="Add a comment" />
+                    <Button fx:id="addCommentButton" onAction="#addComment" style="-fx-background-color: #F66A6B; -fx-text-fill: #FFFFFF;" text="Add Comment">
+                  <font>
+                     <Font name="Lava Devanagari Medium" size="13.0" />
+                  </font></Button>
+                </VBox>
+
+                <!-- Created by -->
+                <Label fx:id="createdBy" text="Created by: User" />
+
+                <!-- Tag list -->
+                <VBox fx:id="tagList" spacing="5">
+                    <Label style="-fx-font-weight: bold;" text="Tags:" />
+                </VBox>
+
+                <!-- Additional buttons -->
+                <HBox spacing="10">
+                    <Button fx:id="addList" onAction="#addToList" style="-fx-background-color: #F66A6B; -fx-text-fill: white;" styleClass="shadow" stylesheets="@style.css" text="Add to Dinner">
+                  <font>
+                     <Font name="Lava Devanagari Medium" size="13.0" />
+                  </font></Button>
+                    <Button fx:id="sendRecipe" onAction="#sendToAnother" style="-fx-background-color: WHITE; -fx-text-fill: grey;" styleClass="shadow" stylesheets="@style.css" text="Send Recipe">
+                  <font>
+                     <Font name="Lava Devanagari Medium" size="13.0" />
+                  </font></Button>
+                    <Button onAction="#hideRecipeOverlay" style="-fx-background-color: #F66A6B; -fx-text-fill: white;" styleClass="shadow" stylesheets="@style.css" text="Close">
+                  <font>
+                     <Font name="Lava Devanagari Medium" size="13.0" />
+                  </font></Button>
+                </HBox>
+            </VBox>
+
+            <!-- Popup Window for Sending Recipe -->
+            <AnchorPane fx:id="sendRecipePopup" style="-fx-background-color: rgba(0,0,0,0.5);" visible="false">
+                <VBox alignment="CENTER" layoutX="220.0" layoutY="100.0" spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 10;" styleClass="side_menupane" stylesheets="@style.css">
+                    <Label style="-fx-font-weight: bold; -fx-font-size: 20;" text="Send Recipe" />
+                    <TextField fx:id="recipientUsername" promptText="Enter Username" />
+                    <TextArea fx:id="messageText" promptText="Enter your message" />
+                    <HBox alignment="TOP_CENTER" spacing="10">
+                        <Button fx:id="sendToPeer" onAction="#sendRecipe" style="-fx-background-color: #F66A6B; -fx-text-fill: white;" styleClass="shadow" stylesheets="@style.css" text="Send" />
+                        <Button onAction="#closeSendRecipePopup" style="-fx-background-color: #F66A6B; -fx-text-fill: white;" styleClass="shadow" stylesheets="@style.css" text="Cancel" />
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+        </StackPane>
+    </center>
+
+    <!-- Bottom section -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10; -fx-background-color: #faf0e6;">
+            <Label fx:id="welcomeLabel" prefHeight="26.0" prefWidth="160.0" style="-fx-text-fill: #FF5256;" text="Logged in as: User">
+                <font>
+                    <Font name="Times New Roman" size="24" />
+                    <Font name="Baloo Tamma 2 ExtraBold" size="13.0" />
+                </font>
+            </Label>
+
+            <!-- Pagination controls -->
+            <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="0.0" prefWidth="980.0" spacing="10" style="-fx-padding: 10; -fx-background-color: FFFFFF;" styleClass="side_menupane" stylesheets="@style.css">
+                <Button onAction="#previousPage" style="-fx-text-fill: #ffffff; -fx-background-color: #F66A6B;" stylesheets="@style.css" text="Previous">
+                    <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                    </font>
+               <styleClass>
+                  <String fx:value="side_ankerpane" />
+                  <String fx:value="shadow" />
+               </styleClass>
+                </Button>
+                <Button onAction="#nextPage" prefHeight="26.0" prefWidth="67.0" style="-fx-text-fill: #ffffff; -fx-background-color: #F66A6B;" stylesheets="@style.css" text="Next">
+                    <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="side_ankerpane" />
+                        <String fx:value="shadow" />
+                    </styleClass>
+                </Button>
+            </HBox>
+        </HBox>
+    </bottom>
+
+</BorderPane>

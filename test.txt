@@ -1,0 +1,63 @@
+  private String buildSearchQuery(List<Object> parameters) {
+    List<String> conditions = new ArrayList<>();
+    String name = searchNameField.getText().trim();
+    String ingredients = searchIngredientsField.getText().trim();
+    String tags = searchTagsField.getText().trim();
+
+    // Searching by name
+    if (!name.isEmpty()) {
+      conditions.add("Name LIKE ?");
+      parameters.add("%" + name + "%");
+    }
+
+    // Searching by ingredients (all must be present)
+    if (!ingredients.isEmpty()) {
+      String[] ingredientList = ingredients.split(",");
+      List<String> ingredientConditions = new ArrayList<>();
+      for (String ingredient : ingredientList) {
+        ingredientConditions.add("Ingredients LIKE ?");
+        parameters.add("%" + ingredient.trim() + "%");
+      }
+      // Use AND logic to ensure all ingredients are found
+      conditions.add("(" + String.join(" AND ", ingredientConditions) + ")");
+    }
+
+    // Searching by tags (all must be present)
+    if (!tags.isEmpty()) {
+      String[] tagList = tags.split(",");
+      List<String> tagConditions = new ArrayList<>();
+      for (String tag : tagList) {
+        tagConditions.add(
+            "EXISTS (SELECT 1 FROM RecipeTags WHERE RecipeTags.RecipeID = Recipes.RecipeID AND RecipeTags.TagID = (SELECT TagID FROM Tags WHERE TagName = ?))");
+        parameters.add(tag.trim());
+      }
+      // Use AND logic to ensure all tags are required
+      conditions.add("(" + String.join(" AND ", tagConditions) + ")");
+    }
+
+    // Base query
+    String query = "SELECT * FROM Recipes";
+
+    // Adding conditions if there are any
+    if (!conditions.isEmpty()) {
+      query += " WHERE " + String.join(" AND ", conditions);
+    }
+
+    query += " LIMIT " + RECIPES_PER_PAGE; // Add pagination limit
+
+    return query;
+  }
+
+
+   @FXML
+  private void searchRecipes() {
+    // Clear the recipe pane when a new search is performed
+    recipePane.getChildren().clear();
+
+    // Reset the offset
+    currentSearchOffset = 0;
+
+    lastUsedParameters.clear();
+    String query = buildSearchQuery(lastUsedParameters);
+    fetchAndDisplayRecipes(query, lastUsedParameters);
+  }

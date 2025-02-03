@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?> <!-- Add this import statement -->
+
+<!--<BorderPane styleClass="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cookbook.HomeController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #FFD54F;" BorderPane.alignment="CENTER">
+         <Label text="Cookbook" textFill="#424242">
+            <font>
+               <Font name="Arial" size="36.0" />
+            </font>
+            <padding>
+               <Insets left="10.0" />
+            </padding>
+         </Label>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #FFECB3;" BorderPane.alignment="CENTER">
+         <Button fx:id="btnSearch" mnemonicParsing="false" text="Search" textFill="#424242" style="-fx-background-color: #FFD54F; -fx-border-color: transparent;" />
+         <Button fx:id="btnFavorites" mnemonicParsing="false" text="Favorites" textFill="#424242" style="-fx-background-color: #FFD54F; -fx-border-color: transparent;" />
+         <Button fx:id="btnWeeklyLists" mnemonicParsing="false" text="Weekly Lists" textFill="#424242" style="-fx-background-color: #FFD54F; -fx-border-color: transparent;" />
+         <Button fx:id="btnShoppingList" mnemonicParsing="false" text="Shopping List" textFill="#424242" style="-fx-background-color: #FFD54F; -fx-border-color: transparent;" />
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <Label fx:id="welcomeLabel" text="Welcome, [Username]!" textFill="#424242">
+            <font>
+               <Font name="Arial" size="24.0" />
+            </font>
+         </Label>
+         <TextFlow lineSpacing="5.0" prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+            <children>
+               <Text text="Here's what you can do:" fill="#424242">
+                  <font>
+                     <Font name="Arial" size="18.0" />
+                  </font>
+               </Text>
+               <Text text=" Search for recipes, browse your favorites, plan your weekly dinners, and manage your shopping list." fill="#424242">
+                  <font>
+                     <Font name="Arial" size="18.0" />
+                  </font>
+               </Text>
+            </children>
+         </TextFlow>
+      </VBox>
+   </center>
+</BorderPane>

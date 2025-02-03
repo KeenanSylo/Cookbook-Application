@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="439.0" prefWidth="539.0" style="-fx-background-color: #faf0e6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cookbook.LoginController">
+    <VBox alignment="CENTER" layoutX="174.0" layoutY="33.0" prefHeight="374.0" prefWidth="192.0" spacing="10">
+        <TextField fx:id="usernameField" prefHeight="19.0" prefWidth="387.0" promptText="Username" />
+        <PasswordField fx:id="passwordField" promptText="Password" />
+        <Button onAction="#login" prefHeight="26.0" prefWidth="166.0" style="-fx-background-color: ff8733; -fx-text-fill: ffffff;" styleClass="side_ankerpane" stylesheets="@style.css" text="Login">
+         <font>
+            <Font name="Lava Devanagari Heavy" size="13.0" />
+         </font></Button>
+        <Button onAction="#switchToRegistration" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: ff8733; -fx-text-fill: ffffff;" styleClass="side_menupane" stylesheets="@style.css" text="Switch to Registration">
+         <font>
+            <Font name="Lava Devanagari Heavy" size="12.0" />
+         </font></Button>
+    </VBox>
+   <ImageView fitHeight="123.0" fitWidth="539.0" layoutY="316.0" pickOnBounds="true">
+      <image>
+         <Image url="@image/wave.png" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="backgroundImageView" fitHeight="83.0" fitWidth="345.0" layoutX="191.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+   <ImageView fitHeight="145.0" fitWidth="179.0" layoutX="180.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@image/logo.png" />
+      </image>
+   </ImageView>
+</AnchorPane>

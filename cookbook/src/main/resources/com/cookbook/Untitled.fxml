@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!-- Added this line -->
+
+<BorderPane prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cookbook.HomeController">
+
+    <!-- Top section -->
+    <top>
+        <MenuBar style="-fx-background-color: #ffffff;">
+            <!-- Menu items for file, edit, help, etc. -->
+            <Menu text="File">
+                <MenuItem text="New" />
+                <MenuItem text="Open" />
+                <MenuItem text="Save" />
+                <MenuItem text="Logout" />
+                <MenuItem text="Exit" />
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Undo" />
+                <MenuItem text="Redo" />
+                <MenuItem text="Cut" />
+                <MenuItem text="Copy" />
+                <MenuItem text="Paste" />
+            </Menu>
+            <Menu text="View">
+                <MenuItem text="Zoom In" />
+                <MenuItem text="Zoom Out" />
+            </Menu>
+            <Menu text="Help">
+                <MenuItem text="User Guide" />
+                <MenuItem text="About" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <!-- Left section -->
+    <left>
+        <VBox alignment="CENTER" prefHeight="553.0" prefWidth="228.0" spacing="10" style="-fx-background-color: #ffffff;">
+            <StackPane>
+                <!-- Placeholder for user photo -->
+                <ImageView fx:id="userProfileImage" fitHeight="100" fitWidth="100">
+                    <!-- Set clip to make the image circular -->
+                    <clip>
+                        <Circle radius="50" />
+                    </clip>
+                </ImageView>
+                <!-- Circle outline -->
+                <Circle fill="transparent" radius="80" stroke="#007aff" strokeWidth="3.0" />
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profile Picture">
+                    <font>
+                        <Font name="AkayaTelivigala-Regular" size="15.0" />
+                    </font>
+                </Text>
+            </StackPane>
+            <Button fx:id="editProfileButton" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #007aff; -fx-text-fill: #ffffff; -fx-border-radius: 10; -fx-background-radius: 20;" text="Edit Profile" />
+            <Button fx:id="viewFavoritesButton" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #007aff; -fx-text-fill: #ffffff; -fx-border-radius: 10; -fx-background-radius: 20;" text="View Favorites" />
+            <Button fx:id="viewWeeklyDinnerListsButton" cache="true" depthTest="DISABLE" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #007aff; -fx-text-fill: #ffffff; -fx-border-radius: 10; -fx-background-radius: 20;" text="View Weekly Dinner Lists" />
+            <Button fx:id="generateShoppingListButton" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #007aff; -fx-text-fill: #ffffff; -fx-border-radius: 10; -fx-background-radius: 20;" text="Generate Shopping List" />
+        </VBox>
+    </left>
+
+    <!-- Center section -->
+    <center>
+        <VBox spacing="10">
+            <!-- Search field -->
+            <TextField fx:id="searchField" promptText="Search Recipes" />
+            <!-- Updated ListView -->
+            <ListView fx:id="recipeListView" prefHeight="489.0" prefWidth="972.0" />
+            <!-- Button to load more recipes -->
+            <Button onAction="#loadMoreRecipes" prefHeight="26.0" prefWidth="980.0" text="Load More" />
+            <!-- Added FlowPane for displaying recipe boxes -->
+            <FlowPane fx:id="recipePane" />
+        </VBox>
+    </center>
+
+    <!-- Bottom section -->
+    <bottom>
+        <HBox spacing="10" style="-fx-background-color: #ffffff;">
+            <Label fx:id="welcomeLabel" prefHeight="37.0" prefWidth="1208.0" text="Logged in as: User">
+                <font>
+                    <Font name="Times New Roman" size="24.0" />
+                </font>
+            </Label>
+        </HBox>
+    </bottom>
+
+</BorderPane>

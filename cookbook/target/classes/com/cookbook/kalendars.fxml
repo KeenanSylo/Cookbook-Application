@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+
+<GridPane hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml">
+    <!-- Days of the week -->
+    <Text text="Monday" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Text text="Tuesday" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Text text="Wednesday" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Text text="Thursday" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+    <Text text="Friday" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+    <Text text="Saturday" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+    <Text text="Sunday" GridPane.columnIndex="6" GridPane.rowIndex="0"/>
+
+    <!-- Calendar entries -->
+    <!-- You can replace these with your own data -->
+    <Text text="Event 1" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Text text="Event 2" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Text text="Event 3" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Text text="Event 4" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    <Text text="Event 5" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+    <Text text="Event 6" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+    <Text text="Event 7" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+</GridPane>

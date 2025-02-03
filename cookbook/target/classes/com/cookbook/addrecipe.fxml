@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane prefHeight="490.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cookbook.AddRecipeController">
+
+   <children>
+      <FlowPane>
+         <children>
+            <AnchorPane fx:id="recipePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="950.0" style="-fx-background-color: #faf0e6;" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="86.0" fitWidth="89.0" layoutX="341.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/fries.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="86.0" fitWidth="89.0" layoutX="428.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/soup.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="118.0" fitWidth="107.0" layoutX="512.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/pancake.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="67.0" layoutX="274.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/salmon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="68.0" fitWidth="68.0" layoutX="614.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/beef.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="recipeAdd" alignment="CENTER" layoutX="380.0" layoutY="24.0" prefHeight="45.0" prefWidth="188.0" style="-fx-background-color: #faf0e6;" styleClass="side_menupane" stylesheets="@style.css" text="Add Recipe">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="30.0" />
+                     </font></Label>
+                  <Label layoutX="51.0" layoutY="80.0" prefHeight="17.0" prefWidth="92.0" text="Recipe Name">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="recipeNameField" layoutX="48.0" layoutY="108.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@style.css" />
+                  <TextField fx:id="customTagField" layoutX="674.0" layoutY="120.0" promptText="Add a private tag" />
+                  <Button fx:id="addTagButton" layoutX="824.0" layoutY="120.0" onAction="#addCustomTag" text="Add Tag" />
+                  <Label layoutX="50.0" layoutY="153.0" prefHeight="17.0" prefWidth="95.0" text="Ingredients">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                     </font></Label>
+                  <TextArea fx:id="ingredientsField" layoutX="47.0" layoutY="180.0" prefHeight="81.0" prefWidth="216.0" />
+                  <Label alignment="CENTER" layoutX="304.0" layoutY="172.0" prefHeight="17.0" prefWidth="61.0" styleClass="side_menupane" stylesheets="@style.css" text="Portion">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="402.0" layoutY="159.0" prefHeight="26.0" prefWidth="129.0" stylesheets="@style.css" text="Short Description">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="47.0" layoutY="273.0" prefHeight="17.0" prefWidth="123.0" text="Full Description">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="portion" layoutX="305.0" layoutY="205.0" prefHeight="52.0" prefWidth="59.0" stylesheets="@style.css" />
+                  <TextArea fx:id="detailedDescriptionField" layoutX="45.0" layoutY="300.0" prefHeight="87.0" prefWidth="850.0" />
+                  <TextArea fx:id="shortDescriptionField" layoutX="405.0" layoutY="196.0" prefHeight="62.0" prefWidth="488.0" stylesheets="@style.css" />
+                  <Button fx:id="cancel" layoutX="482.0" layoutY="420.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #F66A6B; -fx-text-fill: FFFFFF;" stylesheets="@style.css" text="Cancel">
+                     <styleClass>
+                        <String fx:value="side_menupane" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="14.0" />
+                     </font></Button>
+                  <Button fx:id="Confirm" layoutX="375.0" layoutY="420.0" mnemonicParsing="false" onAction="#saveRecipe" prefHeight="36.0" prefWidth="86.0" style="-fx-background-color: #F66A6B; -fx-text-fill: FFFFFF;" stylesheets="@style.css" text="Confirm">
+                     <styleClass>
+                        <String fx:value="side_menupane" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="14.0" />
+                     </font></Button>
+                  <ComboBox fx:id="choiceBox" layoutX="499.0" layoutY="120.0" onAction="#chooseTag" prefWidth="150.0" />
+                  <Label alignment="CENTER" layoutX="501.0" layoutY="91.0" prefHeight="26.0" prefWidth="92.0" stylesheets="@style.css" text="Tag Selection">
+                     <font>
+                        <Font name="Lava Devanagari Heavy" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="113.0" fitWidth="104.0" layoutX="850.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/darthvader.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </FlowPane>
+   </children>
+</FlowPane>

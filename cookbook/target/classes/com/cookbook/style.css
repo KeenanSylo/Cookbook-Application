@@ -1,0 +1,107 @@
+.side_ankerpane{
+    fx-background-color: #2207bb;
+  -fx-border-width: 2px 2px 2px 2px;
+  -fx-border-radius: 50px;
+  -fx-background-radius: 50px;
+  -x-border-style: solid;
+}
+.side_menupane{
+  -fx-border-width: 2px 2px 2px 2px;
+  -fx-border-radius: 35px;
+  -fx-background-radius: 35px;
+  -x-border-style: solid;
+}
+.color_scheme{
+  -fx-border-color: #94c2ff;
+}
+.colortext{
+  -fx-text-fill: #81B7FF;
+}
+.text-field {
+  -fx-prompt-text-fill: #ffffff;
+}
+.text-field:empty .text {
+  -fx-effect: null ;
+}
+.gradientcolor{
+  -fx-background-color: linear-gradient(to bottom,#B4D4FF, #E7F1FF)
+}
+.shadow{
+  -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 3.0 , 0.0 , 0.0 , 3.0);
+}
+.textbox, .textbox .text-area{
+  -fx-border-width: 2px 2px 2px 2px;
+  -fx-border-radius: 15px;
+  -fx-background-radius: 15px;
+  -x-border-style: solid;
+}
+
+/* Column header styles */
+.table-view .column-header {
+  -fx-background-color: #FFA500;
+  -fx-background-radius: 8 8 0 0;  /* Rounded top corners */
+}
+
+.table-view .column-header .label {
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+}
+
+.table-view .column-header-background {
+  -fx-background-color: #FFA500;
+  -fx-background-radius: 8 8 0 0;  /* Rounded top corners */
+  -fx-background-insets: 0;
+}
+
+.table-view .filler {
+  -fx-background-color: #FFA500;
+  -fx-background-radius: 8 8 0 0;  /* Rounded top corners */
+}
+
+/* Remove corner */
+.table-view .corner {
+  -fx-background-color: transparent;
+}
+
+/* Table styles */
+.table-view {
+  -fx-background-color: white;
+}
+
+.table-view .table-cell {
+  -fx-background-color: white;
+  -fx-text-fill: black;
+}
+
+.table-view .table-row-cell {
+  -fx-background-color: white;
+}
+
+.table-view .table-row-cell:odd {
+  -fx-background-color: white;
+}
+
+/* Scrollbar styles */
+.table-view .scroll-bar:vertical,
+.table-view .scroll-bar:horizontal {
+  -fx-background-color: white;
+}
+
+.table-view .scroll-bar:vertical .thumb,
+.table-view .scroll-bar:horizontal .thumb {
+  -fx-background-color: #FFA500;
+  -fx-background-radius: 5em;
+}
+
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button,
+.table-view .scroll-bar:horizontal .increment-button,
+.table-view .scroll-bar:horizontal .decrement-button {
+  -fx-background-color: #FFA500;
+  -fx-padding: 2;
+}
+
+.table-view .scroll-bar .increment-arrow,
+.table-view .scroll-bar .decrement-arrow {
+  -fx-background-color: white;
+}
